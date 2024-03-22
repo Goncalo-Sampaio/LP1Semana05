@@ -10,12 +10,17 @@ namespace MyGame
         private string name;
         private float health;
         private float shield;
+        private static int totalPowerUps;
 
         public Enemy(string name)
         {
             SetName(name);
             health = 100;
             shield = 0;
+        }
+
+        static Enemy(){
+            totalPowerUps = 0;
         }
 
         public string GetName()
@@ -31,6 +36,10 @@ namespace MyGame
         public float GetShield()
         {
             return shield;
+        }
+
+        public static int GetTotalPowerUps(){
+            return totalPowerUps;
         }
 
         /// <summary>
@@ -76,6 +85,8 @@ namespace MyGame
             {
                 shield += value;
             }
+
+            totalPowerUps += 1;
         }
     }
 }

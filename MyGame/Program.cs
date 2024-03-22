@@ -35,6 +35,7 @@ namespace MyGame
             Console.WriteLine(enemy1.GetHealth());
             enemy1.TakeDamage(50);
             Console.WriteLine(enemy1.GetHealth());
+            Console.WriteLine(Enemy.GetTotalPowerUps());
         }
     }
 }
