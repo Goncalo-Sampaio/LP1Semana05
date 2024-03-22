@@ -25,6 +25,7 @@ namespace MyGame
                 Console.WriteLine($"{name} {health} {shield}");
             }
 
+            //Testing enemy functionality
             Enemy enemy1 = enemies[0];
             enemy1.TakeDamage(50);
             Console.WriteLine(enemy1.GetHealth());
