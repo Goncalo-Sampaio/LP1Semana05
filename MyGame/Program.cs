@@ -24,6 +24,16 @@ namespace MyGame
                 float shield = x.GetShield();
                 Console.WriteLine($"{name} {health} {shield}");
             }
+
+            Enemy enemy1 = enemies[0];
+            enemy1.TakeDamage(50);
+            Console.WriteLine(enemy1.GetHealth());
+            enemy1.PickupPowerUp(PowerUp.Health, 50);
+            Console.WriteLine(enemy1.GetHealth());
+            enemy1.PickupPowerUp(PowerUp.Shield, 30);
+            Console.WriteLine(enemy1.GetHealth());
+            enemy1.TakeDamage(50);
+            Console.WriteLine(enemy1.GetHealth());
         }
     }
 }
