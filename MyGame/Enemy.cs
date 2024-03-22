@@ -12,7 +12,7 @@ namespace MyGame
         private float shield;
 
         public Enemy(string name){
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 0;
         }
@@ -20,6 +20,27 @@ namespace MyGame
         public string GetName(){
             return name;
         }
+
+        public float GetHealth(){
+            return health;
+        }
+
+        public float GetShield(){
+            return shield;
+        }
+
+        /// <summary>
+        /// Method to set the enemy's name with a max of 8 chars
+        /// </summary>
+        /// <param name="name"></param>
+        public void SetName(string name){
+            if (name.Length <= 8) {
+                this.name = name;
+            } else {
+                this.name = name.Substring(0, 8);
+            }
+        }
+
 
         public void TakeDamage(float damage){
             shield -= damage;
